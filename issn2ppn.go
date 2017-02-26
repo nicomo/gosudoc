@@ -18,7 +18,6 @@ type Issn2ppnData struct {
 
 // Issn2ppn takes 1 or more ISSNs
 // and will return the corresponding sudoc record IDs
-// with an additional information : does any library have holdings for this title? Y/N
 func Issn2ppn(input []string) (map[string][]string, error) {
 
 	result := make(map[string][]string)
