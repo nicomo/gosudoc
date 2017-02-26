@@ -29,8 +29,8 @@ func TestGetMerged(t *testing.T) {
 }
 
 func ExampleGetMerged() {
-
-	result, _ := GetMerged(mergedTests[0].Input)
+	input := []string{"071860576"}
+	result, _ := GetMerged(input)
 	for k, v := range result {
 		fmt.Println(k, v)
 	}
