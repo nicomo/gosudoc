@@ -3,7 +3,6 @@ package gosudoc
 import (
 	"encoding/xml"
 	"errors"
-	"fmt"
 )
 
 // MultiwhereData is used to parse xml response
@@ -51,8 +50,6 @@ func GetMultiwhere(input []string) (map[string][]Library, error) {
 	for _, v := range parsedResp.Results {
 		result[v.Queried] = v.Libraries
 	}
-
-	fmt.Println(result)
 
 	return result, nil
 }

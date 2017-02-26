@@ -1,6 +1,7 @@
 package gosudoc
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -179,4 +180,23 @@ func TestID2ppn(t *testing.T) {
 			t.Fatalf("FAIL for %s: expected %v, actual result was %v", test.Input, test.Expected, actual)
 		}
 	}
+}
+
+func ExampleID2ppn() {
+	myIDService := "frbn2ppn"
+	myInput := []string{"00000051X"}
+
+	result, _ := ID2ppn(myInput, myIDService)
+	for k, v := range result {
+		fmt.Println(k)
+		for _, value := range v {
+			fmt.Println(value)
+		}
+	}
+
+	// Output:
+	// 00000051X
+	// 000000167
+	// 02635778X
+
 }

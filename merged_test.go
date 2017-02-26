@@ -1,6 +1,7 @@
 package gosudoc
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -25,6 +26,17 @@ func TestGetMerged(t *testing.T) {
 			t.Fatalf("FAIL for %s: expected %v, actual result was %v", test.Input, test.Expected, actual)
 		}
 	}
+}
+
+func ExampleGetMerged() {
+
+	result, _ := GetMerged(mergedTests[0].Input)
+	for k, v := range result {
+		fmt.Println(k, v)
+	}
+
+	// Output:
+	// 071860576 007527446
 }
 
 // TODO: test with a mock server rather than a live http.Get

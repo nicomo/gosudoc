@@ -1,3 +1,7 @@
+// Package gosudoc is a set of client functions for the web services
+// available on top of the Library Catalog of French University libraries
+// named Sudoc.
+// see http://documentation.abes.fr/sudoc/manuels/administration/aidewebservices/
 package gosudoc
 
 import (
