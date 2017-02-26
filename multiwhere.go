@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-// MultiwhereData is used to parse xml response
+// MultiwhereData is used to parse xml response for the multiwhere web service
 type MultiwhereData struct {
 	Err     string `xml:"error"`
 	Results []struct {
@@ -14,6 +14,8 @@ type MultiwhereData struct {
 	} `xml:"query"`
 }
 
+// Library is used when we unmarshal the library info embedded in the returned XML
+// i.e. library ID, name, lat and longitude.
 type Library struct {
 	RCR       string `xml:"rcr"`
 	Shortname string `xml:"shortname"`

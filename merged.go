@@ -16,6 +16,8 @@ type MergedData struct {
 
 // GetMerged takes any number of Sudoc ID numbers (PPN)
 // and matches them with the ID of the merged marc record
+// it echoes the IDs you input, then outputs the returned PPNs
+// Sudoc responds with an error if there's nothing to return
 func GetMerged(input []string) (map[string]string, error) {
 	result := make(map[string]string)
 

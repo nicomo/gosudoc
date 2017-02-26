@@ -16,6 +16,10 @@ var ID2 = []string{
 	"ean2ppn",
 }
 
+// ID2ppnData: used to unmarshal the XML returned by Sudoc
+// will populate the appropriate field given a service,
+// e.g. Ocn for the ocn2ppn web service,
+// and ignore the other fields
 type ID2ppnData struct {
 	Err   string `xml:"error"`
 	Pairs []struct {
@@ -31,6 +35,10 @@ type ID2ppnData struct {
 	} `xml:"query"`
 }
 
+// ID2ppn is used for several related web services:
+// given one or more IDs such as isbns, OCLC ocn, etc.
+// and given the appropriate service to try (isbn, ocn, etc)
+// will return the corresponding sudoc record IDs
 func ID2ppn(input []string, id2 string) (map[string][]string, error) {
 
 	result := make(map[string][]string)
